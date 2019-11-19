@@ -1,8 +1,9 @@
-library(xcms)
-library(mzR)
+#   THIS SCRIPT IS FOR CHECKING FOR RETENTION TIME CONSISTENCY
+#   AND WRITING A TEMPLATE CSV SUPPORTING DSDA DATA ACQUISITION
+#   EMAIL: COREY.BROECKLING@COLOSTATE.EDU
 
 ### check For Consistency in retention times for a given scan index
-### we need scan time consistency of  < 20% of a typical chromatographic peak width 
+### we need scan time consistency of < 20% of a typical chromatographic peak width 
 ### so that we can preschedule our precursor selection. 
 ### obviously - this also means that you need reproducible retention times in your
 ### raw chromatography data.  
@@ -12,6 +13,11 @@ library(mzR)
 ### conver the raw Waters format to mzML using Proteowizard
 ### we can analyze these files to explore how stable the 
 ### relationsthip is between scan index and retention time
+
+
+library(xcms)
+library(mzR)
+
 
 ## set working directory
 setwd("R:/RSTOR-PMF/Projects/Broeckling_Corey/DsDA/FinalExperiment/WRENS_20170524_final_dsda.PRO/mzML")
