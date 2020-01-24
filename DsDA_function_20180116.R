@@ -80,6 +80,12 @@ DsDA<-function(
   cleanoutcsv<-outcsv
   
   ## assign random masses
+  ## this of course is not ideal, 
+  ## but necessary due to the fact that I
+  ## haven't figured out how to use DDA for the first
+  ## two runs instead.  It basically requires better communication
+  ## through C# to Wrens - recognizing DDA and not triggering start
+  ## of Wrens control
   outcsv[msms, "MS1_MASS_DAC_SETTING"]<- (sample((50000:2000000), length(msms))/1000)  *tofMult
   
   # if we want to run in negative ionization mode, we must set CE and cone voltage to a negative value
